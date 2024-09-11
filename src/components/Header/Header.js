@@ -12,7 +12,7 @@ function Header() {
                 <nav className="navListHeader">
                     <ul className="ulNav">
                         <li className="liNav"><Link to="/">Home</Link></li>
-                        <li className="liNav"><Link to="/favoritos"> Favoritos</Link> </li>
+                        <li className="liNav"><Link to="/favoritos">Favoritos</Link> </li>
                         <li className="liVerTodas">Ver todas<ul>
                             <li ><Link to="/verTodas?genre=Romance"> Series populares</Link></li>
                             <li><Link to="//verTodas?genre=Terror"> Peliculas populares</Link></li>
