@@ -13,7 +13,7 @@ class DetallePelicula extends Component{
     }
 
     componentDidMount(){
-        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=${APIkey}`)
+        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=b704c3c0bb664614cb7d33ce45f904f3`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
