@@ -1,0 +1,7 @@
+.sectionDetalle{
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+}
