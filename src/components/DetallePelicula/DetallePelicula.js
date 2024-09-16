@@ -32,8 +32,10 @@ class DetallePelicula extends Component{
         return(
                 <section className="sectionDetalle">
                     {this.state.cargando ? 
-                    <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando"/> :
-                    <InfoPeli pelicula={this.state.pelicula}/>}
+                    <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando"/>
+                     :
+                     <InfoPeli pelicula={this.state.pelicula}/>
+                    }
                 </section>
         )
     }
