@@ -10,7 +10,8 @@ class DetallePelicula extends Component{
         super(props);
         this.state = {
             pelicula: [],
-            id: this.props.id
+            id: this.props.id,
+            cargando: true
         }
     }
 
@@ -20,7 +21,8 @@ class DetallePelicula extends Component{
         .then((data) => {
             console.log(data);
             this.setState({
-                pelicula: data
+                pelicula: data,
+                cargando: false
             })
         })
         .catch((e) => console.log(e))
@@ -29,8 +31,8 @@ class DetallePelicula extends Component{
     render(){
         return(
                 <section className="sectionDetalle">
-                    {this.state.pelicula.length === 0 ? 
-                    <h3>Cargando...</h3> :
+                    {this.state.cargando ? 
+                    <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando"/> :
                     <InfoPeli pelicula={this.state.pelicula}/>}
                 </section>
         )
