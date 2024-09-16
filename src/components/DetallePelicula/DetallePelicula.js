@@ -11,7 +11,6 @@ class DetallePelicula extends Component{
         this.state = {
             pelicula: [],
             id: this.props.id
-
         }
     }
 
