@@ -28,13 +28,11 @@ class DetallePelicula extends Component{
 
     render(){
         return(
-            <React.Fragment>
                 <section className="sectionDetalle">
                     {this.state.pelicula.length === 0 ? 
                     <h3>Cargando...</h3> :
                     <InfoPeli pelicula={this.state.pelicula}/>}
                 </section>
-            </React.Fragment>
         )
     }
 
