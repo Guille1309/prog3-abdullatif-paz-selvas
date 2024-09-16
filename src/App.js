@@ -4,7 +4,7 @@ import Home from './screens/Home/Home';
 import Detalle from './screens/Detalle/Detalle';
 import Seccion from './screens/Seccion/Seccion';
 import Favoritos from './screens/Favoritos/Favoritos';
-import ResultadosBusqueda from './screens/ResultadosBusqueda/ResultadosBusqueda';
+import Resultados from './screens/Resultados/Resultados';
 import NotFound from './screens/NotFound/NotFound';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Route path="/peliculas/seccion/:seccion" component={Seccion} />
         <Route path="/peliculas/id/:id" component={Detalle} />
         <Route path="/favoritos" component={Favoritos} />
-        <Route path="/resultadosBusqueda/:busqueda" component={ResultadosBusqueda} />
+        <Route path="/resultadosBusqueda/:busqueda" component={Resultados} />
         <Route path="" component={NotFound} />
       </Switch>);
 
