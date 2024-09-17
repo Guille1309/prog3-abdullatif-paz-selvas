@@ -51,11 +51,12 @@
 .botonFavoritos:hover {
     background-color: #d81b60; 
 }
+
 p{
     color: #333;
 }
 
-p:hover{
+.irDetalle:hover{
     color: #6a1b9a;
 }
 

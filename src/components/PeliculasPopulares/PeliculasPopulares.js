@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Pelicula from "../Pelicula/Pelicula";
+
 import "./PeliculasPopulares.css"
+
 let APIkey = "b704c3c0bb664614cb7d33ce45f904f3";
 
 class PeliculasPopulares extends Component {
@@ -30,6 +32,7 @@ class PeliculasPopulares extends Component {
     render() {
         return (
             <React.Fragment>
+                <h1 className="titulo">Películas populares</h1>
                 <section className="mostrarFavs">
                     {this.state.peliculas.length === 0 ?
                         <h3>Cargando...</h3> :

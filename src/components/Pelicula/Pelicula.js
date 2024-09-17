@@ -60,7 +60,7 @@ class Pelicula extends Component {
                 <section className={this.state.estado}>
                     <p>{this.state.pelicula.overview} </p>
                 </section>
-                <Link to={`/peliculas/detalle/${this.state.pelicula.id}`}> <p>Ir a detalle</p></Link>
+                <Link to={`/peliculas/detalle/${this.state.pelicula.id}`}> <p className="irDetalle">Ir a detalle</p></Link>
 
                 <button onClick={() => this.verDescripcion()} className="botonFavoritos">{this.state.boton}</button>
                 <button onClick={() => this.agregarFavorito(this.state.pelicula)} className="botonFavoritos">{arrayPelisFavoritas.filter(peli => peli.id == this.state.pelicula.id).length == 0? "Agregar a favoritos": "Eliminar de favoritos"}</button>
