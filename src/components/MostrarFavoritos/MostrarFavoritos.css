@@ -28,10 +28,26 @@
     background-color: #f3e5f5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 75vh;
+    height: fit-content;
+    border-radius: 15px;
 }
 
 .listaMostrarFavs:hover{
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 900px) {
+    .mostrarFavs{
+        flex-direction: column;
+    }
+
+    .listaMostrarFavs{
+        width: 90%;
+    }
 }

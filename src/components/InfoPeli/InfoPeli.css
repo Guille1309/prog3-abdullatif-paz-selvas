@@ -45,7 +45,7 @@
 
 .generosDetalle{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 20px; 
     align-items: center;
@@ -93,4 +93,32 @@
 .favoritos:hover{
     background-color: #8e44ad;
     color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 900px) {
+    .imgDetalle{
+        width: 90%;
+    }
+
+    .listaDetalle{
+        flex-direction: column;
+    }
+
+    .liDetalle{
+        margin: 2%;
+    }
+
+    .subtituloDetalle{
+        font-size: 2rem;
+    }
+
+    .sinopsisDetalle{
+        padding: 0%;
+    }
+
 }

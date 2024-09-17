@@ -55,6 +55,10 @@ p{
     color: #333;
 }
 
+p:hover{
+    color: #6a1b9a;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .peli {

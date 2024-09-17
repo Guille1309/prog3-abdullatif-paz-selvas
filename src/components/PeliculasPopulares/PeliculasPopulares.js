@@ -29,19 +29,15 @@ class PeliculasPopulares extends Component {
 
     render() {
         return (
-            
             <React.Fragment>
                 <section className="mostrarFavs">
                     {this.state.peliculas.length === 0 ?
                         <h3>Cargando...</h3> :
                         this.state.peliculas.slice(0, 5).map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
-                        
                     }
                 </section>
-            
             </React.Fragment>
         );
-
     }
 }
 

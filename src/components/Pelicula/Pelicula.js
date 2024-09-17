@@ -13,6 +13,7 @@ class Pelicula extends Component {
         }
 
     }
+
     verDescripcion() {
         if (this.state.boton == "Ver descripción") {
             this.setState({
@@ -25,14 +26,13 @@ class Pelicula extends Component {
                 estado: "hide"
             })
         }
-
     }
+
     agregarFavorito() {
         let pelisFavoritas = localStorage.getItem('Favoritos');
         let arrayPelisFavoritas = JSON.parse(pelisFavoritas) || []; 
 
-        if (arrayPelisFavoritas.filter(peli => peli.id == this.state.pelicula.id).length == 0) {
-
+        if (arrayPelisFavoritas.filter((peli) => peli.id === this.state.pelicula.id).length === 0) {
             arrayPelisFavoritas.push(this.state.pelicula);
             localStorage.setItem('Favoritos', JSON.stringify(arrayPelisFavoritas));
 
@@ -40,8 +40,7 @@ class Pelicula extends Component {
                 botonFavorito: "Eliminar de favoritos"
             });
         } else {
-            
-            let nuevoArrayFav = arrayPelisFavoritas.filter(peli => peli.id !== this.state.pelicula.id);
+            let nuevoArrayFav = arrayPelisFavoritas.filter((peli) => peli.id !== this.state.pelicula.id);
             localStorage.setItem('Favoritos', JSON.stringify(nuevoArrayFav));
 
             this.setState({
@@ -49,8 +48,6 @@ class Pelicula extends Component {
             });
         }
     }
-
-
 
     render() {
         let pelisFavoritas = localStorage.getItem('Favoritos');
@@ -68,10 +65,8 @@ class Pelicula extends Component {
                 <button onClick={() => this.verDescripcion()} className="botonFavoritos">{this.state.boton}</button>
                 <button onClick={() => this.agregarFavorito(this.state.pelicula)} className="botonFavoritos">{arrayPelisFavoritas.filter(peli => peli.id == this.state.pelicula.id).length == 0? "Agregar a favoritos": "Eliminar de favoritos"}</button>
             </article>
-
         )
     }
-
-}
+};
 
 export default Pelicula;
