@@ -14,7 +14,7 @@ function App() {
         <Route path="/peliculas/verTodas/:seccion" component={Seccion} />
         <Route path="/peliculas/detalle/:id" component={Detalle} />
         <Route path="/favoritos" component={Favoritos} />
-        <Route path="/resultadosBusqueda/:busqueda" component={Resultados} />
+        <Route path="/resultadosbusqueda/:busqueda" component={Resultados} />
         <Route path="" component={NotFound} />
       </Switch>
     )
