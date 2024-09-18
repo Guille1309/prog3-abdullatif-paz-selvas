@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import ResultadosBusqueda from "../../components/ResultadosBusqueda.js/ResultadosBusqueda";
+import ResultadosBusqueda from "../../components/ResultadosBusqueda/ResultadosBusqueda";
 import Footer from "../../components/Footer/Footer";
 
 function Resultados(props){
