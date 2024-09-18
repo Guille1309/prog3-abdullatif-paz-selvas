@@ -4,7 +4,7 @@ import "./Header.css"
 
 function Header() {
     return (
-        <header >
+        <header>
             <div className="logo">
                 <img className="imgHeader" src="./img/logo.png" alt="Logo JCG"></img>
             </div>
@@ -15,7 +15,7 @@ function Header() {
                         <li className="liNav"><Link to="/favoritos">Favoritos</Link> </li>
                         <li className="liVerTodas">Ver todas<ul>
                             <li ><Link to="/verTodas?genre=Romance"> Series populares</Link></li>
-                            <li><Link to="//verTodas?genre=Terror"> Peliculas populares</Link></li>
+                            <li><Link to="/verTodas?genre=Terror"> Películas populares</Link></li>
                         </ul></li>
                     </ul>
                 </nav>
