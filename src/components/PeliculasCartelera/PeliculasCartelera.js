@@ -10,7 +10,8 @@ class PeliculasCartelera extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            peliculas: []
+            peliculas: [],
+            cargando: true
         }
     }
 
@@ -24,7 +25,8 @@ class PeliculasCartelera extends Component {
             .then(data => {
                 console.log(data)
                 this.setState({
-                    peliculas: data.results
+                    peliculas: data.results,
+                    cargando: false
                 })
             })
             .catch(error => console.log('El error fue: ' + error))
@@ -35,10 +37,11 @@ class PeliculasCartelera extends Component {
             <React.Fragment>
                 <h1 className="titulo">Películas en cartelera</h1>
                 <section className="mostrarFavs">
-                    {this.state.peliculas.length === 0 ?
-                        <h3>Cargando...</h3> :
-                        this.state.peliculas.slice(0, 5).map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
-                    }
+                {this.state.cargando ? 
+                <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando"/>
+                :
+                this.state.peliculas.slice(0, 5).map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
+                } 
                 </section>
             </React.Fragment>
         );
