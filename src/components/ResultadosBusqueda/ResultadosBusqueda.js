@@ -34,37 +34,31 @@ class ResultadosBusqueda extends Component{
     render(){
         return(
           <div className="container">
-          <input
-            type="text"
-            value={this.state.busqueda}
-            placeholder="Buscar..."
+        {this.state.cargando ? (
+          <img
+            src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif"
+            alt="Cargando..."
+            className="gifCargando"
           />
-
-          {this.state.cargando ? (
-            <img
-              src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif"
-              alt="Cargando..."
-              className="gifCargando"
-            />
-          ) : (
-            <div className="resultados">
-              {this.state.resultados.length > 0 ? (
-                this.state.resultados.map((resultado) => (
-                  <div key={resultado.id} className="resultado-item">
-                    <h3>{resultado.title}</h3>
-                    <p>{resultado.overview}</p>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w200${resultado.poster_path}`}
-                      alt={resultado.title}
-                    />
-                  </div>
-                ))
-              ) : (
-                <p>No se encontraron resultados.</p>
-              )}
-            </div>
-          )}
-        </div>
+        ) : (
+          <div className="resultados">
+            {this.state.resultados.length > 0 ? (
+              this.state.resultados.map((resultado) => (
+                <div key={resultado.id} className="resultado-item">
+                  <h3>{resultado.title}</h3>
+                  <p>{resultado.overview}</p>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w200${resultado.poster_path}`}
+                    alt={resultado.title}
+                  />
+                </div>
+              ))
+            ) : (
+              <p>No se encontraron resultados.</p>
+            )}
+          </div>
+        )}
+      </div>
         )
     }
 };
