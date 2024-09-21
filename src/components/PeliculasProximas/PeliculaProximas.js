@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 import Pelicula from "../Pelicula/Pelicula";
 
-import "../PeliculasCartelera/PeliculasCartelera.css"
+import "./PeliculasProximas.css"
 
 let APIkey = "b704c3c0bb664614cb7d33ce45f904f3";
 
-class PeliculasCartelera extends Component {
+class PeliculasProximas extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -35,7 +35,7 @@ class PeliculasCartelera extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1 className="titulo">Películas en cartelera</h1>
+                <h1 className="titulo">Películas Próximas</h1>
                 <section className="mostrarFavs">
                 {this.state.cargando ? 
                 <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando"/>
@@ -48,4 +48,4 @@ class PeliculasCartelera extends Component {
     }
 }
 
-export default PeliculasCartelera;
+export default PeliculasProximas;

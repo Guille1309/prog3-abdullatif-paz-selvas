@@ -2,14 +2,14 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import PeliculasPopulares from "../../components/PeliculasPopulares/PeliculasPopulares";
-import PeliculasCartelera from "../../components/PeliculasCartelera/PeliculasCartelera";
+import PeliculasProximas from "../../components/PeliculasProximas/PeliculaProximas";
 
 function Home() {
     return(
         <React.Fragment>
             <Header/>
             <PeliculasPopulares/>
-            <PeliculasCartelera/>
+            <PeliculasProximas/>
             <Footer/>
         </React.Fragment>
     )
