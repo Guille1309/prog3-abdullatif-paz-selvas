@@ -2,16 +2,15 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import PeliculasPopulares from "../../components/PeliculasPopulares/PeliculasPopulares";
-import PeliculasProximas from "../../components/PeliculasProximas/PeliculaProximas";
 
-function Home() {
+
+function VerPopulares() {
     return(
         <React.Fragment>
             <Header/>
-            <PeliculasPopulares isHome={true}/>
-            <PeliculasProximas isHome={true}/>
+            <PeliculasPopulares/>
             <Footer/>
         </React.Fragment>
     )
 }
-export default Home;
+export default VerPopulares;

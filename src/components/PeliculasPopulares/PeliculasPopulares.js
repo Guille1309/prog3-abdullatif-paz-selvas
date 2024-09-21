@@ -9,13 +9,14 @@ class PeliculasPopulares extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            isHome: props.isHome,
             peliculas: [],
             cargando: true
         }
     }
 
     componentDidMount() {
-        if (!localStorage.getItem("Favoritos")){
+        if (!localStorage.getItem("Favoritos")) {
             localStorage.setItem("Favoritos", JSON.stringify([]))
         };
 
@@ -36,11 +37,14 @@ class PeliculasPopulares extends Component {
             <React.Fragment>
                 <h1 className="titulo">Películas populares</h1>
                 <section className="mostrarFavs">
-                {this.state.cargando ? 
-                <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando"/>
-                :
-                this.state.peliculas.slice(0, 5).map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
-                } 
+                    {this.state.cargando ?
+                        <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando" />
+                        : (
+                            this.state.isHome ? this.state.peliculas.slice(0, 5).map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
+                                : this.state.peliculas.map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
+                        )
+
+                    }
                 </section>
             </React.Fragment>
         );

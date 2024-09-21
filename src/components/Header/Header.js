@@ -14,8 +14,8 @@ function Header() {
                         <li className="liNav"><Link to="/">Home</Link></li>
                         <li className="liNav"><Link to="/favoritos">Favoritos</Link> </li>
                         <li className="liVerTodas">Ver todas<ul>
-                            <li ><Link to="/verTodas?genre=Romance"> Series populares</Link></li>
-                            <li><Link to="/verTodas?genre=Terror"> Películas populares</Link></li>
+                            <li ><Link to="/peliculas/verTodas/populares"> Películas populares</Link></li>
+                            <li><Link to="/peliculas/verTodas/proximas"> Películas próximas</Link></li>
                         </ul></li>
                     </ul>
                 </nav>
