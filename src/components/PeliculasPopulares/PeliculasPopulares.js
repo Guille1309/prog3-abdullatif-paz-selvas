@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Pelicula from "../Pelicula/Pelicula";
 
 import "./PeliculasPopulares.css"
+import Filtro from "../Filtro/Filtro";
 
 let APIkey = "b704c3c0bb664614cb7d33ce45f904f3";
 
@@ -46,11 +47,18 @@ class PeliculasPopulares extends Component {
             })
             .catch(error => console.log('El error fue: ' + error))
     }
+    filtrarPeliculas(){
+        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.name.toLowerCase().includes(peli.name.toLowerCase))
+        this.setState({
+            peliculas: peliculasFiltradas
+        })
+    }
 
     render() {
         return (
             <React.Fragment>
                 <h1 className="titulo">Películas populares</h1>
+                <Filtro filtrarPeliculas={(name)=>this.filtrarPeliculas(name)}/>
     
                 <section className="mostrarPeliculas">
                     {this.state.cargando ?
