@@ -7,7 +7,7 @@ class Pelicula extends Component {
         super(props);
         this.state = {
             pelicula: props.data,
-            boton: "Ver descripción ",
+            boton: "Ver descripción",
             estado: "hide",
             botonFavorito: "Agregar a favoritos"
         }

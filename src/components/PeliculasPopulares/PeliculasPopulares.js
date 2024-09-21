@@ -60,8 +60,8 @@ class PeliculasPopulares extends Component {
                                 : this.state.peliculas.map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
                         )
                     }
-                    {!this.state.isHome?<button onClick={() => this.verMasPeliculas()}>Ver más</button>: null }
                 </section>
+                {!this.state.isHome?<button onClick={() => this.verMasPeliculas()}>Ver más</button>: null }
             </React.Fragment>
         );
     }

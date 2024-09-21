@@ -24,7 +24,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
-.imgPeliFav {
+img {
     width: 100%;
     height: auto; 
     border-radius: 10px; 
@@ -37,7 +37,7 @@
     margin-bottom: 10px;
 }
 
-.botonFavoritos {
+button{
     background-color: #e91e63;
     color: white;
     border: none;
@@ -48,7 +48,7 @@
     transition: background-color 0.3s ease;
 }
 
-.botonFavoritos:hover {
+button:hover {
     background-color: #d81b60; 
 }
 

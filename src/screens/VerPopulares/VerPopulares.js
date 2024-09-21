@@ -7,7 +7,7 @@ import PeliculasPopulares from "../../components/PeliculasPopulares/PeliculasPop
 function VerPopulares() {
     return(
         <React.Fragment>
-            <Header/>
+            <Header />
             <PeliculasPopulares isHome={false}/>
             <Footer/>
         </React.Fragment>
