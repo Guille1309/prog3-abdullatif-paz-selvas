@@ -23,3 +23,16 @@ footer{
 .logofooter{
     width: 8%;
 }
+
+@media(max-width: 420px) {
+    .lista-footer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nombres{
+        padding-bottom: 5px;
+    }
+
+}

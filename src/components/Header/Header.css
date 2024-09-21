@@ -58,3 +58,21 @@ a{
 a:hover{
     color: #C8A2C8;
 }
+
+@media(max-width: 420px) {
+    .header{
+        flex-direction: column;
+        margin: 0%;
+    }
+
+    .logo{
+        width: fit-content;
+    }
+
+    .ulNav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
