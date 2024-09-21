@@ -8,7 +8,7 @@ function VerPopulares() {
     return(
         <React.Fragment>
             <Header/>
-            <PeliculasPopulares/>
+            <PeliculasPopulares isHome={false}/>
             <Footer/>
         </React.Fragment>
     )

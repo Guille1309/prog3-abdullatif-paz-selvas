@@ -11,7 +11,8 @@ class PeliculasPopulares extends Component {
         this.state = {
             isHome: props.isHome,
             peliculas: [],
-            cargando: true
+            cargando: true,
+            pagina:1
         }
     }
 
@@ -20,7 +21,7 @@ class PeliculasPopulares extends Component {
             localStorage.setItem("Favoritos", JSON.stringify([]))
         };
 
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}`)
+        fetch(` https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -31,20 +32,35 @@ class PeliculasPopulares extends Component {
             })
             .catch(error => console.log('El error fue: ' + error))
     }
+    verMasPeliculas(){
+        let nuevaPagina= this.state.pagina + 1
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&page=${nuevaPagina}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                this.setState({
+                    peliculas: this.state.peliculas.concat(data.results),
+                    cargando: false,
+                    pagina: nuevaPagina
+                })
+            })
+            .catch(error => console.log('El error fue: ' + error))
+    }
 
     render() {
         return (
             <React.Fragment>
                 <h1 className="titulo">Películas populares</h1>
-                <section className="mostrarFavs">
+    
+                <section className="mostrarPeliculas">
                     {this.state.cargando ?
                         <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando" />
                         : (
                             this.state.isHome ? this.state.peliculas.slice(0, 5).map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
                                 : this.state.peliculas.map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
                         )
-
                     }
+                    {!this.state.isHome?<button onClick={() => this.verMasPeliculas()}>Ver más</button>: null }
                 </section>
             </React.Fragment>
         );

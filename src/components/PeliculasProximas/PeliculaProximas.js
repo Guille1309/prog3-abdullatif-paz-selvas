@@ -37,7 +37,7 @@ class PeliculasProximas extends Component {
         return (
             <React.Fragment>
                 <h1 className="titulo">Películas Próximas</h1>
-                <section className="mostrarFavs">
+                <section className="mostrarPeliculas">
 
                     {this.state.cargando ?
                         <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando" />
