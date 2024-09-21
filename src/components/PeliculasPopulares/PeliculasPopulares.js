@@ -28,7 +28,8 @@ class PeliculasPopulares extends Component {
                 console.log(data)
                 this.setState({
                     peliculas: data.results,
-                    cargando: false
+                    cargando: false,
+                    backup:[]
                 })
             })
             .catch(error => console.log('El error fue: ' + error))
@@ -42,13 +43,14 @@ class PeliculasPopulares extends Component {
                 this.setState({
                     peliculas: this.state.peliculas.concat(data.results),
                     cargando: false,
-                    pagina: nuevaPagina
+                    pagina: nuevaPagina,
+                    backup: data.results
                 })
             })
             .catch(error => console.log('El error fue: ' + error))
     }
-    filtrarPeliculas(){
-        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.name.toLowerCase().includes(peli.name.toLowerCase))
+    filtrarPeliculas(name){
+        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.title.toLowerCase().includes(name.toLowerCase))
         this.setState({
             peliculas: peliculasFiltradas
         })

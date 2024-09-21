@@ -13,7 +13,8 @@ class PeliculasProximas extends Component {
         this.state = {
             isHome: props.isHome,
             peliculas: [],
-            cargando: true
+            cargando: true,
+            backup:[]
         }
     }
 
@@ -29,13 +30,13 @@ class PeliculasProximas extends Component {
                 this.setState({
                     peliculas: data.results,
                     cargando: false,
-                    backup: data.content
+                    backup: data.results
                 })
             })
             .catch(error => console.log('El error fue: ' + error))
     }
-    filtrarPeliculas(){
-        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.name.toLowerCase().includes(peli.name.toLowerCase))
+    filtrarPeliculas(name){
+        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.title.toLowerCase().includes(name.toLowerCase))
         this.setState({
             peliculas: peliculasFiltradas
         })
