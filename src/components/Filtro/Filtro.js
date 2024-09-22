@@ -4,7 +4,7 @@ class Filtro extends Component{
     constructor(){
         super();
         this.state={
-            valorInput: ""
+
         }
     }
     evitarSubmit(event){
@@ -14,12 +14,14 @@ class Filtro extends Component{
         this.setState({
             valorInput: event.target.value
         },
-        () => console.log(this.state.valorInput))
+        () => this.props.filtrarPeliculas(this.state.valorInput))
+        
     }
+    
     render(){
         return(
-            <form onSubmit={(event)=>this.evitarSubmit(event)}>
-                <input type="text" placeholder="escribir busqueda" onChange={(event)=>this.controladosCambios} value={this.state.valorInput}/>
+            <form onSubmit={(event)=>this.evitarSubmit()}>
+                <input type="text" placeholder="escribir busqueda" onChange={(event)=>this.controladorCambios(event)} value={this.state.valorInput}/>
             </form>
         )
     }

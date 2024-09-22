@@ -29,7 +29,7 @@ class PeliculasPopulares extends Component {
                 this.setState({
                     peliculas: data.results,
                     cargando: false,
-                    backup:[]
+                    backup:data.results
                 })
             })
             .catch(error => console.log('El error fue: ' + error))
@@ -49,8 +49,8 @@ class PeliculasPopulares extends Component {
             })
             .catch(error => console.log('El error fue: ' + error))
     }
-    filtrarPeliculas(name){
-        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.title.toLowerCase().includes(name.toLowerCase))
+    filtrarPeliculas(nombre){
+        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.title.toLowerCase().includes(nombre.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas
         })
@@ -60,7 +60,7 @@ class PeliculasPopulares extends Component {
         return (
             <React.Fragment>
                 <h1 className="titulo">Películas populares</h1>
-                <Filtro filtrarPeliculas={(name)=>this.filtrarPeliculas(name)}/>
+                <Filtro filtrarPeliculas={(nombre)=>this.filtrarPeliculas(nombre)}/>
     
                 <section className="mostrarPeliculas">
                     {this.state.cargando ?
