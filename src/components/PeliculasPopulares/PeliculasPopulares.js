@@ -55,12 +55,13 @@ class PeliculasPopulares extends Component {
             peliculas: peliculasFiltradas
         })
     }
+    
 
     render() {
         return (
             <React.Fragment>
                 <h1 className="titulo">Películas populares</h1>
-                <Filtro filtrarPeliculas={(nombre)=>this.filtrarPeliculas(nombre)}/>
+                {!this.state.isHome? <Filtro filtrarPeliculas={(nombre)=>this.filtrarPeliculas(nombre)}/>: null }
     
                 <section className="mostrarPeliculas">
                     {this.state.cargando ?

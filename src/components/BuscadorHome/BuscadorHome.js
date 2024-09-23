@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 
 class BuscadorHome extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             valor: '',
-            peliculas:[]
+            peliculas: []
         };
     }
 
@@ -19,12 +21,15 @@ class BuscadorHome extends Component {
 
     render() {
         return (
-            <form onSubmit={(event) => this.evitarSubmit(event)}>
+            <form onSubmit={(event) => this.evitarSubmit()}>
                 <label>Pelicula:</label>
-                <input type="text" onChange={(event) => this.controlarCambios(event)} value={this.state.valor} />
-                <input type="submit" value="Submit" />
-            </form>
+                <input type="text" placeholder="Buscar película" onInput={(event) => this.controlarCambios(event)} value={this.state.valor} />
+                <Link to={`/resultadosbusqueda/${this.state.valor}`}> Buscar </Link>
+
+            </form >
         )
     }
 }
+
+
 export default BuscadorHome
