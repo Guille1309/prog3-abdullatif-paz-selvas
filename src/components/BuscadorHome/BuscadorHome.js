@@ -23,7 +23,7 @@ class BuscadorHome extends Component {
 
     render() {
         return (
-            <form onSubmit={(event) => this.evitarSubmit()}>
+            <form onSubmit={(event) => this.evitarSubmit(event)}>
                 <input type="text" placeholder="Buscar película" onInput={(event) => this.controlarCambios(event)} value={this.state.valor} />
                 <Link className= "buscar" to={`/resultadosbusqueda/${this.state.valor}`}> <i className="fas fa-search"></i> </Link>
 
