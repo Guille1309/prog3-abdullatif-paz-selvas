@@ -7,7 +7,7 @@ function Resultados(props){
     return(
         <React.Fragment>
             <Header/>
-            <ResultadosBusqueda/>
+            <ResultadosBusqueda />
             <Footer/>
         </React.Fragment>
     )

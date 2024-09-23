@@ -12,24 +12,24 @@ class ResultadosBusqueda extends Component{
             cargando: true
         }
     }
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.busqueda !== this.state.busqueda && this.state.busqueda !== "") {
-          this.setState({ cargando: true }); 
-    
-          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${this.state.busqueda}`)
-            .then((res) => res.json())
-            .then((data) => {
-              this.setState({
-                resultados: data.results,  
-                cargando: false           
-              });
-            })
-            .catch((errors) => {
-              console.error(errors);
-              this.setState({ cargando: false });  
-            });
-        }
+    componentDidMount(){
+      if (this.state.busqueda !== "") {
+        this.setState({cargando:true})
+      
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${this.state.busqueda}`)
+        .then((res) => res.json())
+        .then((data)=> {
+          this.setState({
+            resultados: data.results,
+            cargando: false
+          })
+        })
+        .catch((errors) => {
+          console.log(errors);
+          this.setState({cargando: false})
+        })
       }
+    }
     
     render(){
         return(
