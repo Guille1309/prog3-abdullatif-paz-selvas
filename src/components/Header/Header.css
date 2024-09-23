@@ -9,13 +9,16 @@ header {
 }
 
 .logo{
-    width: fit-content;
+    align-self: center;
+    display: grid;
     align-items: center;
+
 }
 
 .imgHeader {
-    width: 100%;
+    width: 50%;
     margin: 2%;
+    justify-self: center;
 }
 
 .navListHeader {
