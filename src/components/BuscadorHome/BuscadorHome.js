@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./BuscadorHome.css";
+
 
 
 class BuscadorHome extends Component {
@@ -22,9 +24,8 @@ class BuscadorHome extends Component {
     render() {
         return (
             <form onSubmit={(event) => this.evitarSubmit()}>
-                <label>Pelicula:</label>
                 <input type="text" placeholder="Buscar película" onInput={(event) => this.controlarCambios(event)} value={this.state.valor} />
-                <Link to={`/resultadosbusqueda/${this.state.valor}`}> Buscar </Link>
+                <Link className= "buscar" to={`/resultadosbusqueda/${this.state.valor}`}> <i className="fas fa-search"></i> </Link>
 
             </form >
         )

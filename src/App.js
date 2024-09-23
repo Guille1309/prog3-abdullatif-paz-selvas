@@ -8,6 +8,7 @@ import NotFound from './screens/NotFound/NotFound';
 import VerPopulares from './screens/VerPopulares/VerPopulares';
 import VerProximas from './screens/VerProximas/VerProximas';
 
+
 function App() {
   return (
       <Switch>

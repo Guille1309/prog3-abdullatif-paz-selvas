@@ -5,7 +5,7 @@
 .mostrarPeliculas{
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
