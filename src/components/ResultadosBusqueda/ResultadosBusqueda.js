@@ -7,15 +7,11 @@ class ResultadosBusqueda extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      busqueda: this.props.match.params.busqueda,
       resultados: [],
       cargando: true
     }}
     componentDidMount(){
-      if (this.state.busqueda !== "") {
-        this.setState({ cargando: true })
-
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${this.state.busqueda}`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${this.props.busqueda}`)
           .then((res) => res.json())
           .then((data) => {
             this.setState({
@@ -28,7 +24,6 @@ class ResultadosBusqueda extends Component {
             this.setState({ cargando: false })
           })
       }
-    }
     render(){
       return (
         <div className="container">
@@ -39,10 +34,10 @@ class ResultadosBusqueda extends Component {
               className="gifCargando"
             />
           ) : (
-            <div className="resultados">
+            <div className="mostrarFavs">
               {this.state.resultados.length > 0 ? (
                 this.state.resultados.map((resultado) => (
-                  <div key={resultado.id} className="resultado-item">
+                  <div key={resultado.id} className="listaMostrarFavs">
                     <h3>{resultado.title}</h3>
                     <p>{resultado.overview}</p>
                     <img
@@ -58,7 +53,6 @@ class ResultadosBusqueda extends Component {
           )}
         </div>
       )
-    }
-  };
+    }};
 
 export default ResultadosBusqueda;
