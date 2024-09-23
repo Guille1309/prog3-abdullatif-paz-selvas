@@ -10,7 +10,6 @@ function VerPopulares() {
         <React.Fragment>
             <Header />
             <PeliculasPopulares isHome={false}/>
-
             <Footer/>
         </React.Fragment>
     )

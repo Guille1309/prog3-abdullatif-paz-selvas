@@ -13,9 +13,9 @@ function Home() {
             <Header/>
             <BuscadorHome/>
             <PeliculasPopulares isHome={true}/>
-            <Link to= "/peliculas/verTodas/populares" className= "verTodas">Ver todas ></Link>
+            <Link to= "/peliculas/verTodas/populares" className= "verTodas">Ver todas </Link>
             <PeliculasProximas isHome={true}/>
-            <Link to= "/peliculas/verTodas/proximas" className= "verTodas">Ver todas ></Link>
+            <Link to= "/peliculas/verTodas/proximas" className= "verTodas">Ver todas </Link>
             <Footer/>
         </React.Fragment>
     )

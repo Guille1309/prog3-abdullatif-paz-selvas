@@ -14,7 +14,7 @@ class Filtro extends Component{
         this.setState({
             valorInput: event.target.value
         },
-        () => console.log(this.state.valorInput))
+        () => this.props.filtrarPeliculas(this.state.valorInput))
         
     }
     
