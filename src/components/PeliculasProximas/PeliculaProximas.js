@@ -36,12 +36,14 @@ class PeliculasProximas extends Component {
             })
             .catch(error => console.log('El error fue: ' + error))
     }
+
     filtrarPeliculas(name) {
         let peliculasFiltradas = this.state.backup.filter((peli) => peli.title.toLowerCase().includes(name.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas
         })
     }
+
     verMasPeliculas(){
         let nuevaPagina= this.state.pagina + 1
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${APIkey}&page=${nuevaPagina}`)
@@ -58,6 +60,7 @@ class PeliculasProximas extends Component {
             })
             .catch(error => console.log('El error fue: ' + error))
     }
+
     render() {
         return (
             <React.Fragment>
@@ -77,9 +80,6 @@ class PeliculasProximas extends Component {
             </React.Fragment>
         );
     }
-}
-
-
-;
+};
 
 export default PeliculasProximas;

@@ -35,6 +35,7 @@ class PeliculasPopulares extends Component {
             })
             .catch(error => console.log('El error fue: ' + error))
     }
+
     verMasPeliculas(){
         let nuevaPagina= this.state.pagina + 1
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&page=${nuevaPagina}`)
@@ -50,6 +51,7 @@ class PeliculasPopulares extends Component {
             })
             .catch(error => console.log('El error fue: ' + error))
     }
+
     filtrarPeliculas(nombre){
         let peliculasFiltradas = this.state.backup.filter((peli)=>peli.title.toLowerCase().includes(nombre.toLowerCase()))
         this.setState({
@@ -57,7 +59,6 @@ class PeliculasPopulares extends Component {
         })
     }
     
-
     render() {
         return (
             <React.Fragment>

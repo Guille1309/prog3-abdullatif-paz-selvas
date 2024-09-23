@@ -2,8 +2,6 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import PeliculasPopulares from "../../components/PeliculasPopulares/PeliculasPopulares";
-import Filtro from "../../components/Filtro/Filtro";
-
 
 function VerPopulares() {
     return(
@@ -14,4 +12,5 @@ function VerPopulares() {
         </React.Fragment>
     )
 }
+
 export default VerPopulares;
