@@ -3,37 +3,37 @@ import "../ResultadosBusqueda/ResultadosBusqueda.css";
 
 let APIkey = "b704c3c0bb664614cb7d33ce45f904f3";
 
-class ResultadosBusqueda extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            busqueda: "",
-            resultados: [],
-            cargando: true
-        }
+class ResultadosBusqueda extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      busqueda: "",
+      resultados: [],
+      cargando: true
     }
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.busqueda !== this.state.busqueda && this.state.busqueda !== "") {
-          this.setState({ cargando: true }); 
-    
-          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${this.state.busqueda}`)
-            .then((res) => res.json())
-            .then((data) => {
-              this.setState({
-                resultados: data.results,  
-                cargando: false           
-              });
-            })
-            .catch((errors) => {
-              console.error(errors);
-              this.setState({ cargando: false });  
-            });
-        }
-      }
-    
-    render(){
-        return(
-          <div className="container">
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.busqueda !== this.state.busqueda && this.state.busqueda !== "") {
+      this.setState({ cargando: true });
+
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${this.state.busqueda}`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.setState({
+            resultados: data.results,
+            cargando: false
+          });
+        })
+        .catch((errors) => {
+          console.error(errors);
+          this.setState({ cargando: false });
+        });
+    }
+  }
+
+  render() {
+    return (
+      <div className="container">
         {this.state.cargando ? (
           <img
             src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif"
@@ -59,8 +59,8 @@ class ResultadosBusqueda extends Component{
           </div>
         )}
       </div>
-        )
-    }
+    )
+  }
 };
 
 export default ResultadosBusqueda;

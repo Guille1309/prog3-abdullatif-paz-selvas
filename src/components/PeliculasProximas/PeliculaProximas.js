@@ -14,7 +14,7 @@ class PeliculasProximas extends Component {
             isHome: props.isHome,
             peliculas: [],
             cargando: true,
-            backup:[]
+            backup: []
         }
     }
 
@@ -35,28 +35,40 @@ class PeliculasProximas extends Component {
             })
             .catch(error => console.log('El error fue: ' + error))
     }
-    filtrarPeliculas(name){
-        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.title.toLowerCase().includes(name.toLowerCase))
+    filtrarPeliculas(name) {
+        let peliculasFiltradas = this.state.backup.filter((peli) => peli.title.toLowerCase().includes(name.toLowerCase))
         this.setState({
             peliculas: peliculasFiltradas
         })
+    }
+
+    filtrarPeliculasglobal() {
+        const { busqueda } = this.props;
+        if (busqueda === "") {
+            return this.state.backup;
+        } else {
+            return this.state.backup.filter((peli) =>
+                peli.title.toLowerCase().includes(busqueda.toLowerCase())
+            );
+        }
     }
 
     render() {
         return (
             <React.Fragment>
                 <h1 className="titulo">Películas Próximas</h1>
-                <Filtro filtrarPeliculas={(name)=>this.filtrarPeliculas(name)}/>
-                <section className="mostrarPeliculas">
+                {!this.state.isHome ? <Filtro filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} /> : null}
 
+                <section className="mostrarPeliculas">
                     {this.state.cargando ?
                         <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando" />
                         : (
-                            this.state.isHome
-                                ? this.state.peliculas.slice(0, 5).map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
+                            this.state.isHome ? this.state.peliculas.slice(0, 5).map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
                                 : this.state.peliculas.map((pelicula) => <Pelicula key={pelicula.id} data={pelicula} />)
-                        )}
+                        )
+                    }
                 </section>
+                {!this.state.isHome ? <button onClick={() => this.verMasPeliculas()}>Ver más</button> : null}
             </React.Fragment>
         );
     }
