@@ -36,7 +36,7 @@ class PeliculasProximas extends Component {
             .catch(error => console.log('El error fue: ' + error))
     }
     filtrarPeliculas(name) {
-        let peliculasFiltradas = this.state.backup.filter((peli) => peli.title.toLowerCase().includes(name.toLowerCase))
+        let peliculasFiltradas = this.state.backup.filter((peli) => peli.title.toLowerCase().includes(name.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas
         })
@@ -73,5 +73,8 @@ class PeliculasProximas extends Component {
         );
     }
 }
+
+
+;
 
 export default PeliculasProximas;

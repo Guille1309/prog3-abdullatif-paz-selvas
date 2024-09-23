@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import PeliculasProximas from "../../components/PeliculasProximas/PeliculaProximas";
 import Footer from "../../components/Footer/Footer";
+import Filtro from "../../components/Filtro/Filtro";
 
 function VerProximas() {
     return(

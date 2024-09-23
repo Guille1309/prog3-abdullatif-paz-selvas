@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../ResultadosBusqueda/ResultadosBusqueda.css";
+import Pelicula from "../Pelicula/Pelicula";
 
 let APIkey = "b704c3c0bb664614cb7d33ce45f904f3";
 
@@ -34,22 +35,15 @@ class ResultadosBusqueda extends Component {
               className="gifCargando"
             />
           ) : (
-            <div className="mostrarFavs">
+            <section className="mostrarFavs">
               {this.state.resultados.length > 0 ? (
                 this.state.resultados.map((resultado) => (
-                  <div key={resultado.id} className="listaMostrarFavs">
-                    <h3>{resultado.title}</h3>
-                    <p>{resultado.overview}</p>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w200${resultado.poster_path}`}
-                      alt={resultado.title}
-                    />
-                  </div>
+                  <Pelicula key={resultado.id} data={resultado}/>
                 ))
               ) : (
                 <p>No se encontraron resultados.</p>
               )}
-            </div>
+            </section>
           )}
         </div>
       )
