@@ -7,6 +7,7 @@ function Resultados(props){
     return(
         <React.Fragment>
             <Header/>
+            <h1>Resultados de búsqueda de {props.match.params.busqueda}...</h1>
             <ResultadosBusqueda busqueda={props.match.params.busqueda}/>
             <Footer/>
         </React.Fragment>

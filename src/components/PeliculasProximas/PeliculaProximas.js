@@ -14,7 +14,8 @@ class PeliculasProximas extends Component {
             isHome: props.isHome,
             peliculas: [],
             cargando: true,
-            backup: []
+            backup: [],
+            pagina: 1
         }
     }
 
@@ -41,18 +42,22 @@ class PeliculasProximas extends Component {
             peliculas: peliculasFiltradas
         })
     }
-
-    filtrarPeliculasglobal() {
-        const { busqueda } = this.props;
-        if (busqueda === "") {
-            return this.state.backup;
-        } else {
-            return this.state.backup.filter((peli) =>
-                peli.title.toLowerCase().includes(busqueda.toLowerCase())
-            );
-        }
+    verMasPeliculas(){
+        let nuevaPagina= this.state.pagina + 1
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${APIkey}&page=${nuevaPagina}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                this.setState({
+                    peliculas: this.state.peliculas.concat(data.results),
+                    cargando: false,
+                    pagina: nuevaPagina,
+                    backup: data.results
+                })
+                console.log(this.state.peliculas);
+            })
+            .catch(error => console.log('El error fue: ' + error))
     }
-
     render() {
         return (
             <React.Fragment>
