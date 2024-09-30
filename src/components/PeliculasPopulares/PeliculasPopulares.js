@@ -14,7 +14,7 @@ class PeliculasPopulares extends Component {
             isHome: props.isHome,
             peliculas: [],
             cargando: true,
-            pagina:1
+            pagina: 1
         }
     }
 
@@ -26,22 +26,20 @@ class PeliculasPopulares extends Component {
         fetch(` https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 this.setState({
                     peliculas: data.results,
                     cargando: false,
-                    backup:data.results
+                    backup: data.results
                 })
             })
             .catch(error => console.log('El error fue: ' + error))
     }
 
-    verMasPeliculas(){
-        let nuevaPagina= this.state.pagina + 1
+    verMasPeliculas() {
+        let nuevaPagina = this.state.pagina + 1
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&page=${nuevaPagina}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 this.setState({
                     peliculas: this.state.peliculas.concat(data.results),
                     cargando: false,
@@ -52,20 +50,20 @@ class PeliculasPopulares extends Component {
             .catch(error => console.log('El error fue: ' + error))
     }
 
-    filtrarPeliculas(nombre){
-        let peliculasFiltradas = this.state.backup.filter((peli)=>peli.title.toLowerCase().includes(nombre.toLowerCase()))
+    filtrarPeliculas(nombre) {
+        let peliculasFiltradas = this.state.backup.filter((peli) => peli.title.toLowerCase().includes(nombre.toLowerCase()))
         this.setState({
             peliculas: peliculasFiltradas
         })
     }
-    
+
     render() {
         return (
             <React.Fragment>
                 <h1 className="titulo">Películas populares</h1>
-    
-                {!this.state.isHome? <Filtro filtrarPeliculas={(nombre)=>this.filtrarPeliculas(nombre)}/>: null }
-    
+
+                {!this.state.isHome ? <Filtro filtrarPeliculas={(nombre) => this.filtrarPeliculas(nombre)} /> : null}
+
                 <section className="mostrarPeliculas">
                     {this.state.cargando ?
                         <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando" />
@@ -75,7 +73,7 @@ class PeliculasPopulares extends Component {
                         )
                     }
                 </section>
-                {!this.state.isHome?<button onClick={() => this.verMasPeliculas()}>Ver más</button>: null }
+                {!this.state.isHome ? <button onClick={() => this.verMasPeliculas()}>Ver más</button> : null}
             </React.Fragment>
         );
     }

@@ -4,11 +4,11 @@ import Footer from "../../components/Footer/Footer";
 import PeliculasPopulares from "../../components/PeliculasPopulares/PeliculasPopulares";
 
 function VerPopulares() {
-    return(
+    return (
         <React.Fragment>
             <Header />
-            <PeliculasPopulares isHome={false}/>
-            <Footer/>
+            <PeliculasPopulares isHome={false} />
+            <Footer />
         </React.Fragment>
     )
 }

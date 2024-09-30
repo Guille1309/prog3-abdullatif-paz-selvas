@@ -12,7 +12,6 @@ class ResultadosBusqueda extends Component {
       cargando: true
     }
   }
-
   componentDidMount() {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${this.props.busqueda}`)
       .then((res) => res.json())

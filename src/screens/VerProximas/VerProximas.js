@@ -4,11 +4,11 @@ import PeliculasProximas from "../../components/PeliculasProximas/PeliculaProxim
 import Footer from "../../components/Footer/Footer";
 
 function VerProximas() {
-    return(
+    return (
         <React.Fragment>
-            <Header/>
-            <PeliculasProximas isHome={false}/>
-            <Footer/>
+            <Header />
+            <PeliculasProximas isHome={false} />
+            <Footer />
         </React.Fragment>
     )
 };
