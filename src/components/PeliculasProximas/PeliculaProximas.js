@@ -42,10 +42,6 @@ class PeliculasProximas extends Component {
             peliculas: peliculasFiltradas
         })
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 0aa5f8ca49cb582ba776863aa4ec795d3be21399
     verMasPeliculas() {
         let nuevaPagina = this.state.pagina + 1
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${APIkey}&page=${nuevaPagina}`)
