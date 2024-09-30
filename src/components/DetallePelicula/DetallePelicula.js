@@ -19,7 +19,6 @@ class DetallePelicula extends Component{
         fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=${APIkey}&language=es-MX`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
             this.setState({
                 pelicula: data,
                 cargando: false

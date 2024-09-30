@@ -26,7 +26,6 @@ class PeliculasPopulares extends Component {
         fetch(` https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 this.setState({
                     peliculas: data.results,
                     cargando: false,
@@ -40,7 +39,6 @@ class PeliculasPopulares extends Component {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIkey}&page=${nuevaPagina}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 this.setState({
                     peliculas: this.state.peliculas.concat(data.results),
                     cargando: false,
