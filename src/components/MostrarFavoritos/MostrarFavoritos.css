@@ -43,9 +43,10 @@
     .mostrarFavs{
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .listaMostrarFavs{
-        width: fit-content;
+        width: 90%;
     }
 }

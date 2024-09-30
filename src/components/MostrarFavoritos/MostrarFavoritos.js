@@ -13,7 +13,7 @@ function MostrarFavoritos(props) {
             <h1 className="tituloFavs">Aún no tienes películas favoritas</h1> :
             <h1 className="tituloFavs">Películas favoritas</h1>}
             <ul className="mostrarFavs">
-                {pelisFav.map((peli) => <li className="listaMostrarFavs"><FavsCard infoPeli={peli}/></li>)}
+                {pelisFav.map((peli) => <li className="listaMostrarFavs"><FavsCard infoPeli={peli} key={peli.id}/></li>)}
             </ul>
         </React.Fragment>
 

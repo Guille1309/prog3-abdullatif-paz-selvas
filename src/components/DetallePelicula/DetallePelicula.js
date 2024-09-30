@@ -34,7 +34,7 @@ class DetallePelicula extends Component {
                 {this.state.cargando ?
                     <img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif" alt="Cargando..." className="gifCargando" />
                     :
-                    <InfoPeli pelicula={this.state.pelicula} />
+                    <InfoPeli pelicula={this.state.pelicula} key={this.state.pelicula.id}/>
                 }
             </section>
         )

@@ -15,7 +15,7 @@ class Pelicula extends Component {
     }
 
     verDescripcion() {
-        if (this.state.boton == "Ver descripción") {
+        if (this.state.boton === "Ver descripción") {
             this.setState({
                 boton: "Ocultar descripción",
                 estado: "show"
@@ -34,14 +34,16 @@ class Pelicula extends Component {
 
         if (arrayPelisFavoritas.filter((peli) => peli.id === this.state.pelicula.id).length === 0) {
             arrayPelisFavoritas.push(this.state.pelicula);
-            localStorage.setItem('Favoritos', JSON.stringify(arrayPelisFavoritas));
+            let arrayStringificado = JSON.stringify(arrayPelisFavoritas);
+            localStorage.setItem('Favoritos', JSON.stringify(arrayStringificado));
 
             this.setState({
                 botonFavorito: "Eliminar de favoritos"
             });
         } else {
             let nuevoArrayFav = arrayPelisFavoritas.filter((peli) => peli.id !== this.state.pelicula.id);
-            localStorage.setItem('Favoritos', JSON.stringify(nuevoArrayFav));
+            let nuevoArrayString = JSON.stringify(nuevoArrayFav);
+            localStorage.setItem('Favoritos', nuevoArrayString);
 
             this.setState({
                 botonFavorito: "Agregar a favoritos"
@@ -63,7 +65,7 @@ class Pelicula extends Component {
                 <Link to={`/peliculas/detalle/${this.state.pelicula.id}`}> <p className="irDetalle">Ir a detalle</p></Link>
 
                 <button onClick={() => this.verDescripcion()} className="botonFavoritos">{this.state.boton}</button>
-                <button onClick={() => this.agregarFavorito(this.state.pelicula)} className="botonFavoritos">{arrayPelisFavoritas.filter(peli => peli.id == this.state.pelicula.id).length == 0? "Agregar a favoritos": "Eliminar de favoritos"}</button>
+                <button onClick={() => this.agregarFavorito(this.state.pelicula)} className="botonFavoritos">{arrayPelisFavoritas.filter((peli) => peli.id === this.state.pelicula.id).length === 0 ? "Agregar a favoritos" : "Eliminar de favoritos"}</button>
             </article>
         )
     }
