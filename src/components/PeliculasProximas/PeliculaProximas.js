@@ -44,8 +44,8 @@ class PeliculasProximas extends Component {
         })
     }
 
-    verMasPeliculas(){
-        let nuevaPagina= this.state.pagina + 1
+    verMasPeliculas() {
+        let nuevaPagina = this.state.pagina + 1
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${APIkey}&page=${nuevaPagina}`)
             .then(response => response.json())
             .then(data => {

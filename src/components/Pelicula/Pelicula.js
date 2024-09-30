@@ -30,7 +30,7 @@ class Pelicula extends Component {
 
     agregarFavorito() {
         let pelisFavoritas = localStorage.getItem('Favoritos');
-        let arrayPelisFavoritas = JSON.parse(pelisFavoritas) || []; 
+        let arrayPelisFavoritas = JSON.parse(pelisFavoritas) || [];
 
         if (arrayPelisFavoritas.filter((peli) => peli.id === this.state.pelicula.id).length === 0) {
             arrayPelisFavoritas.push(this.state.pelicula);
@@ -51,7 +51,7 @@ class Pelicula extends Component {
 
     render() {
         let pelisFavoritas = localStorage.getItem('Favoritos');
-        let arrayPelisFavoritas = JSON.parse(pelisFavoritas) 
+        let arrayPelisFavoritas = JSON.parse(pelisFavoritas)
         return (
             <article className="peli">
                 <img src={`https://image.tmdb.org/t/p/w500${this.state.pelicula.poster_path}`} alt={`Poster de ${this.state.pelicula.title}`} className="imgPeliFav" />
@@ -63,7 +63,7 @@ class Pelicula extends Component {
                 <Link to={`/peliculas/detalle/${this.state.pelicula.id}`}> <p className="irDetalle">Ir a detalle</p></Link>
 
                 <button onClick={() => this.verDescripcion()} className="botonFavoritos">{this.state.boton}</button>
-                <button onClick={() => this.agregarFavorito(this.state.pelicula)} className="botonFavoritos">{arrayPelisFavoritas.filter(peli => peli.id == this.state.pelicula.id).length == 0? "Agregar a favoritos": "Eliminar de favoritos"}</button>
+                <button onClick={() => this.agregarFavorito(this.state.pelicula)} className="botonFavoritos">{arrayPelisFavoritas.filter(peli => peli.id == this.state.pelicula.id).length == 0 ? "Agregar a favoritos" : "Eliminar de favoritos"}</button>
             </article>
         )
     }
