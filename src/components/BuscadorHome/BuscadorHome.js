@@ -25,7 +25,7 @@ class BuscadorHome extends Component {
         return (
             <form onSubmit={(event) => this.evitarSubmit(event)}>
                 <input type="text" placeholder="Buscar película" onInput={(event) => this.controlarCambios(event)} value={this.state.valor} />
-                <Link className= "buscar" to={`/resultadosbusqueda/${this.state.valor}`}> <i className="fas fa-search"></i> </Link>
+                <Link className="buscar" to={`/resultadosbusqueda/${this.state.valor}`}> <i className="fas fa-search"></i> </Link>
 
             </form >
         )

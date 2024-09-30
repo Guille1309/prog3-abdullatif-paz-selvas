@@ -3,7 +3,6 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import DetallePelicula from "../../components/DetallePelicula/DetallePelicula";
 
-
 function Detalle(props){
     return(
         <React.Fragment>

@@ -8,19 +8,18 @@ import NotFound from './screens/NotFound/NotFound';
 import VerPopulares from './screens/VerPopulares/VerPopulares';
 import VerProximas from './screens/VerProximas/VerProximas';
 
-
 function App() {
   return (
-      <Switch>
-        <Route path="/" exact={true} component={Home} />
-        <Route path="/peliculas/verTodas/populares" component={VerPopulares} />
-        <Route path="/peliculas/verTodas/proximas" component={VerProximas} />
-        <Route path="/peliculas/detalle/:id" component={Detalle} />
-        <Route path="/favoritos" component={Favoritos} />
-        <Route path="/resultadosbusqueda/:busqueda" component={Resultados} />
-        <Route path="" component={NotFound} />
-      </Switch>
-    )
+    <Switch>
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/peliculas/verTodas/populares" component={VerPopulares} />
+      <Route path="/peliculas/verTodas/proximas" component={VerProximas} />
+      <Route path="/peliculas/detalle/:id" component={Detalle} />
+      <Route path="/favoritos" component={Favoritos} />
+      <Route path="/resultadosbusqueda/:busqueda" component={Resultados} />
+      <Route path="" component={NotFound} />
+    </Switch>
+  )
 }
 
 export default App;

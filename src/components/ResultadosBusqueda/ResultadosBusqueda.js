@@ -12,6 +12,10 @@ class ResultadosBusqueda extends Component {
       cargando: true
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0aa5f8ca49cb582ba776863aa4ec795d3be21399
   componentDidMount() {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${this.props.busqueda}`)
       .then((res) => res.json())
@@ -26,6 +30,10 @@ class ResultadosBusqueda extends Component {
         this.setState({ cargando: false })
       })
   }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 0aa5f8ca49cb582ba776863aa4ec795d3be21399
   render() {
     return (
       <div className="container">
