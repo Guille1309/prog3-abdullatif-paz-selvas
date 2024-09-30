@@ -37,7 +37,7 @@ class ResultadosBusqueda extends Component {
             className="gifCargando"
           />
         ) : (
-          <section className="mostrarFavs">
+          <section className="mostrarResultados">
             {this.state.resultados.length > 0 ? (
               this.state.resultados.map((resultado) => (
                 <Pelicula key={resultado.id} data={resultado} />

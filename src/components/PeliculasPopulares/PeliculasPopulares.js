@@ -3,7 +3,6 @@ import Pelicula from "../Pelicula/Pelicula";
 
 import "./PeliculasPopulares.css"
 import Filtro from "../Filtro/Filtro";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 let APIkey = "b704c3c0bb664614cb7d33ce45f904f3";
 

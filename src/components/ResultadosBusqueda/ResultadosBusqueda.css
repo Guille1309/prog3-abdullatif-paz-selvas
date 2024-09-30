@@ -1,4 +1,4 @@
-.mostrarFavs{
+.mostrarResultados{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -7,27 +7,4 @@
     list-style-type: none;
     margin: 0%;
     padding: 0%;
-}
-
-.listaMostrarFavs{
-    margin: 0%;
-    padding: 0%;
-    list-style-type: none;
-    width: 22%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 15px;
-    padding: 10px;
-    background-color: #f3e5f5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: fit-content;
-    border-radius: 15px;
-}
-
-.listaMostrarFavs:hover{
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
